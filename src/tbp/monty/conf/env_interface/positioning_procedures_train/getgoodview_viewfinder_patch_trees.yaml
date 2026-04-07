@@ -1,0 +1,16 @@
+# @package experiment.config.train_env_interface_args
+
+# Trees are sparse structures that never fill 50% of pixels. Lower the
+# threshold so the agent stops once any reasonable amount of tree geometry
+# is visible.
+positioning_procedures:
+- _target_: tbp.monty.frameworks.environments.positioning_procedures.GetGoodViewFactory
+  agent_id: agent_id_0
+  sensor_id: view_finder
+  good_view_percentage: 0.01
+- _target_: tbp.monty.frameworks.environments.positioning_procedures.GetGoodViewFactory
+  agent_id: agent_id_0
+  sensor_id: patch
+  allow_translation: false
+  max_orientation_attempts: 3
+  good_view_percentage: 0.01

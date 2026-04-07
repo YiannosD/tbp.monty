@@ -1,0 +1,23 @@
+# @package experiment.config
+
+do_train: true
+train_env_interface_args:
+  parent_to_child_mapping: null
+  object_names:
+  - birch_tree
+  - cedar_tree
+  - cypress_tree
+  - maple_tree
+  - oak_tree
+  - palm_tree
+  - pine_tree
+  - spruce_tree
+  - generic_tree
+  - willow_tree
+  object_init_sampler:
+    _target_: tbp.monty.frameworks.environments.object_init_samplers.RandomRotation
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+train_env_interface_class: ${monty.class:tbp.monty.frameworks.environments.embodied_data.EnvironmentInterfacePerObject}
